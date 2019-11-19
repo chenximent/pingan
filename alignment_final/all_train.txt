@@ -1,0 +1,1 @@
+nohup bash all_train.sh -i ./tmp/data -f data_all.txt -o ./tmp/predictions.res -d 3 -n 3 -m ./tmp/output/predictions.res &

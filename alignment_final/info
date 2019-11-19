@@ -1,0 +1,631 @@
+WARNING:tensorflow:Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f74eb7c7730>) includes params argument, but params are not passed to Estimator.
+INFO:tensorflow:Using config: {'_model_dir': './tmp/output', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': 1000, '_save_checkpoints_secs': None, '_session_config': allow_soft_placement: true
+graph_options {
+  rewrite_options {
+    meta_optimizer_iterations: ONE
+  }
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': None, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f74eb2bbfd0>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1, '_tpu_config': TPUConfig(iterations_per_loop=1000, num_shards=8, num_cores_per_replica=None, per_host_input_for_training=3, tpu_job_name=None, initial_infeed_sleep_secs=None, input_partition_dims=None), '_cluster': None}
+INFO:tensorflow:_TPUContext: eval_on_tpu True
+WARNING:tensorflow:eval_on_tpu ignored because use_tpu is False.
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 我 已 经 我 已 经 办 完 了 我 已 经 还 完 了 [SEP] 找 我 干 嘛 ? [SEP]
+INFO:tensorflow:input_ids: 101 2769 2347 5307 2769 2347 5307 1215 2130 749 2769 2347 5307 6820 2130 749 102 2823 2769 2397 1658 136 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 不 用 了 ， 我 已 经 在 你 们 银 行 已 经 分 期 过 了 [SEP] 确 定 是 本 人 [SEP]
+INFO:tensorflow:input_ids: 101 679 4500 749 8024 2769 2347 5307 1762 872 812 7213 6121 2347 5307 1146 3309 6814 749 102 4802 2137 3221 3315 782 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 呃 ， 不 用 了 不 用 了 ， 谢 谢 ， 嗯 [SEP] 修 改 期 数 [SEP]
+INFO:tensorflow:input_ids: 101 1437 8024 679 4500 749 679 4500 749 8024 6468 6468 8024 1638 102 934 3121 3309 3144 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 不 需 要 不 需 要 我 马 上 就 还 了 ， 我 手 里 有 钱 哈 ， 谢 谢 你 [SEP] 没 听 懂 [SEP]
+INFO:tensorflow:input_ids: 101 679 7444 6206 679 7444 6206 2769 7716 677 2218 6820 749 8024 2769 2797 7027 3300 7178 1506 8024 6468 6468 872 102 3766 1420 2743 102 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 啊 ， 我 暂 时 不 需 要 ， 好 吧 [SEP] 修 改 期 数 [SEP]
+INFO:tensorflow:input_ids: 101 1557 8024 2769 3257 3198 679 7444 6206 8024 1962 1416 102 934 3121 3309 3144 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 嗯 ， 不 需 要 我 等 我 等 一 下 ， 就 还 进 去 了 [SEP] 怀 疑 我 们 是 机 器 人 [SEP]
+INFO:tensorflow:input_ids: 101 1638 8024 679 7444 6206 2769 5023 2769 5023 671 678 8024 2218 6820 6822 1343 749 102 2577 4542 2769 812 3221 3322 1690 782 102 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 嗯 ， 暂 时 不 需 要 谢 谢 哦 [SEP] 现 在 忙 [SEP]
+INFO:tensorflow:input_ids: 101 1638 8024 3257 3198 679 7444 6206 6468 6468 1521 102 4385 1762 2564 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 哦 ， 呢 [SEP] 自 己 办 理 [SEP]
+INFO:tensorflow:input_ids: 101 1521 8024 1450 102 5632 2346 1215 4415 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 不 申 请 谢 谢 [SEP] 已 还 款 [SEP]
+INFO:tensorflow:input_ids: 101 679 4509 6435 6468 6468 102 2347 6820 3621 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 不 用 了 ， 我 好 像 这 个 月 已 经 还 了 [SEP] 你 哪 位 ? [SEP]
+INFO:tensorflow:input_ids: 101 679 4500 749 8024 2769 1962 1008 6821 702 3299 2347 5307 6820 749 102 872 1525 855 136 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 不 用 我 不 需 要 [SEP] 确 定 办 理 意 愿 [SEP]
+INFO:tensorflow:input_ids: 101 679 4500 2769 679 7444 6206 102 4802 2137 1215 4415 2692 2703 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 嗯 ， 不 要 不 要 不 要 好 ， 嗯 ， 嗯 ， 谢 谢 啊 [SEP] 修 改 期 数 [SEP]
+INFO:tensorflow:input_ids: 101 1638 8024 679 6206 679 6206 679 6206 1962 8024 1638 8024 1638 8024 6468 6468 1557 102 934 3121 3309 3144 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 哦 ， 不 需 要 谢 谢 ， 再 见 [SEP] 否 定 是 本 人 [SEP]
+INFO:tensorflow:input_ids: 101 1521 8024 679 7444 6206 6468 6468 8024 1086 6224 102 1415 2137 3221 3315 782 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 我 不 要 ， 不 用 [SEP] 打 招 呼 [SEP]
+INFO:tensorflow:input_ids: 101 2769 679 6206 8024 679 4500 102 2802 2875 1461 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 老 说 啊 ， 不 用 了 [SEP] 自 己 办 理 [SEP]
+INFO:tensorflow:input_ids: 101 5439 6432 1557 8024 679 4500 749 102 5632 2346 1215 4415 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 啊 ， 不 用 哈 ， 谢 谢 啊 ， 不 用 不 用 [SEP] 接 电 话 的 不 是 机 主 [SEP]
+INFO:tensorflow:input_ids: 101 1557 8024 679 4500 1506 8024 6468 6468 1557 8024 679 4500 679 4500 102 2970 4510 6413 4638 679 3221 3322 712 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 不 用 不 用 不 用 ， 我 到 时 候 还 了 [SEP] 修 改 期 数 [SEP]
+INFO:tensorflow:input_ids: 101 679 4500 679 4500 679 4500 8024 2769 1168 3198 952 6820 749 102 934 3121 3309 3144 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 啊 ， 你 好 ， 你 是 哪 位 啊 [SEP] 确 定 办 理 意 愿 [SEP]
+INFO:tensorflow:input_ids: 101 1557 8024 872 1962 8024 872 3221 1525 855 1557 102 4802 2137 1215 4415 2692 2703 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 不 申 请 ， 不 不 是 [SEP] 打 招 呼 [SEP]
+INFO:tensorflow:input_ids: 101 679 4509 6435 8024 679 679 3221 102 2802 2875 1461 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 呃 ， 你 不 用 我 [SEP] 接 电 话 的 不 是 机 主 [SEP]
+INFO:tensorflow:input_ids: 101 1437 8024 872 679 4500 2769 102 2970 4510 6413 4638 679 3221 3322 712 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:***** Running training *****
+INFO:tensorflow:  Num orig examples = 63000
+INFO:tensorflow:  Num split examples = 63000
+INFO:tensorflow:  Batch size = 512
+INFO:tensorflow:  Num steps = 6152
+WARNING:tensorflow:From run_alignment.py:460: map_and_batch (from tensorflow.contrib.data.python.ops.batching) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.experimental.map_and_batch(...)`.
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Running train on CPU
+INFO:tensorflow:*** Features ***
+INFO:tensorflow:  name = input_ids, shape = (512, 40)
+INFO:tensorflow:  name = input_mask, shape = (512, 40)
+INFO:tensorflow:  name = label, shape = (512,)
+INFO:tensorflow:  name = segment_ids, shape = (512, 40)
+INFO:tensorflow:  name = weight, shape = (512,)
+INFO:tensorflow:**** Trainable Variables ****
+INFO:tensorflow:  name = SIM_1/embeddings/word_embeddings:0, shape = (21128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/embeddings/token_type_embeddings:0, shape = (2, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/embeddings/position_embeddings:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/embeddings/LayerNorm/beta:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/embeddings/LayerNorm/gamma:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/self/query/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/self/query/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/self/key/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/self/key/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/self/value/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/self/value/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/output/dense/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/output/dense/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/output/LayerNorm/beta:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/output/LayerNorm/gamma:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/intermediate/dense/kernel:0, shape = (128, 256), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/intermediate/dense/bias:0, shape = (256,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/output/dense/kernel:0, shape = (256, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/output/dense/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/output/LayerNorm/beta:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/output/LayerNorm/gamma:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/self/query/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/self/query/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/self/key/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/self/key/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/self/value/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/self/value/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/output/dense/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/output/dense/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/output/LayerNorm/beta:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/output/LayerNorm/gamma:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/intermediate/dense/kernel:0, shape = (128, 256), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/intermediate/dense/bias:0, shape = (256,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/output/dense/kernel:0, shape = (256, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/output/dense/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/output/LayerNorm/beta:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/output/LayerNorm/gamma:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/pooler/dense/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/pooler/dense/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/output/kernel:0, shape = (128, 2)
+INFO:tensorflow:  name = SIM_1/output/bias:0, shape = (2,)
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Create CheckpointSaverHook.
+INFO:tensorflow:Graph was finalized.
+2019-11-07 11:06:27.537747: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-11-07 11:06:27.555795: E tensorflow/stream_executor/cuda/cuda_driver.cc:300] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2019-11-07 11:06:27.555846: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:163] retrieving CUDA diagnostic information for host: cnsz035572
+2019-11-07 11:06:27.555864: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:170] hostname: cnsz035572
+2019-11-07 11:06:27.555914: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:194] libcuda reported version is: 410.72.0
+2019-11-07 11:06:27.555964: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:198] kernel reported version is: 410.72.0
+2019-11-07 11:06:27.555979: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:305] kernel version seems to match DSO: 410.72.0
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Saving checkpoints for 0 into ./tmp/output/model.ckpt.
+INFO:tensorflow:learning_rate = 0.0, loss = 791.8623, steps = 0
+INFO:tensorflow:global_step/sec: 2.05824
+INFO:tensorflow:examples/sec: 1053.82
+INFO:tensorflow:global_step/sec: 2.11929
+INFO:tensorflow:examples/sec: 1085.08
+INFO:tensorflow:global_step/sec: 2.11577
+INFO:tensorflow:examples/sec: 1083.27
+INFO:tensorflow:global_step/sec: 2.10493
+INFO:tensorflow:examples/sec: 1077.73
+INFO:tensorflow:global_step/sec: 2.10516
+INFO:tensorflow:examples/sec: 1077.84
+INFO:tensorflow:global_step/sec: 2.11074
+INFO:tensorflow:examples/sec: 1080.7
+INFO:tensorflow:global_step/sec: 2.1126
+INFO:tensorflow:examples/sec: 1081.65
+INFO:tensorflow:global_step/sec: 2.10594
+INFO:tensorflow:examples/sec: 1078.24
+INFO:tensorflow:global_step/sec: 2.10876
+INFO:tensorflow:examples/sec: 1079.69
+INFO:tensorflow:Saving checkpoints for 1000 into ./tmp/output/model.ckpt.
+INFO:tensorflow:learning_rate = 4.187256e-05, loss = 2.3891044, steps = 1000 (476.580 sec)
+INFO:tensorflow:global_step/sec: 2.04424
+INFO:tensorflow:examples/sec: 1046.65
+INFO:tensorflow:global_step/sec: 2.10281
+INFO:tensorflow:examples/sec: 1076.64
+INFO:tensorflow:global_step/sec: 2.11493
+INFO:tensorflow:examples/sec: 1082.84
+INFO:tensorflow:global_step/sec: 2.11154
+INFO:tensorflow:examples/sec: 1081.11
+INFO:tensorflow:global_step/sec: 2.11126
+INFO:tensorflow:examples/sec: 1080.96
+INFO:tensorflow:global_step/sec: 2.11202
+INFO:tensorflow:examples/sec: 1081.35
+INFO:tensorflow:global_step/sec: 2.11454
+INFO:tensorflow:examples/sec: 1082.64
+INFO:tensorflow:global_step/sec: 2.11025
+INFO:tensorflow:examples/sec: 1080.45
+INFO:tensorflow:global_step/sec: 2.11988
+INFO:tensorflow:examples/sec: 1085.38
+INFO:tensorflow:global_step/sec: 2.11813
+INFO:tensorflow:examples/sec: 1084.48
+INFO:tensorflow:Saving checkpoints for 2000 into ./tmp/output/model.ckpt.
+INFO:tensorflow:learning_rate = 3.374512e-05, loss = 2.5827947, steps = 2000 (473.708 sec)
+INFO:tensorflow:global_step/sec: 2.09494
+INFO:tensorflow:examples/sec: 1072.61
+INFO:tensorflow:global_step/sec: 2.11453
+INFO:tensorflow:examples/sec: 1082.64
+INFO:tensorflow:global_step/sec: 2.10351
+INFO:tensorflow:examples/sec: 1077
+INFO:tensorflow:global_step/sec: 2.13781
+INFO:tensorflow:examples/sec: 1094.56
+INFO:tensorflow:global_step/sec: 2.10886
+INFO:tensorflow:examples/sec: 1079.74
+INFO:tensorflow:global_step/sec: 2.11628
+INFO:tensorflow:examples/sec: 1083.54
+INFO:tensorflow:global_step/sec: 2.11431
+INFO:tensorflow:examples/sec: 1082.53
+INFO:tensorflow:global_step/sec: 2.11819
+INFO:tensorflow:examples/sec: 1084.51
+INFO:tensorflow:global_step/sec: 2.12053
+INFO:tensorflow:examples/sec: 1085.71
+INFO:tensorflow:global_step/sec: 2.11379
+INFO:tensorflow:examples/sec: 1082.26
+INFO:tensorflow:Saving checkpoints for 3000 into ./tmp/output/model.ckpt.
+INFO:tensorflow:learning_rate = 2.5617685e-05, loss = 1.3296709, steps = 3000 (472.802 sec)
+INFO:tensorflow:global_step/sec: 2.10313
+INFO:tensorflow:examples/sec: 1076.8
+INFO:tensorflow:global_step/sec: 2.11192
+INFO:tensorflow:examples/sec: 1081.3
+INFO:tensorflow:global_step/sec: 2.11236
+INFO:tensorflow:examples/sec: 1081.53
+INFO:tensorflow:global_step/sec: 2.13138
+INFO:tensorflow:examples/sec: 1091.26
+INFO:tensorflow:global_step/sec: 2.11433
+INFO:tensorflow:examples/sec: 1082.53
+INFO:tensorflow:global_step/sec: 2.11139
+INFO:tensorflow:examples/sec: 1081.03
+INFO:tensorflow:global_step/sec: 2.12914
+INFO:tensorflow:examples/sec: 1090.12
+INFO:tensorflow:global_step/sec: 2.11713
+INFO:tensorflow:examples/sec: 1083.97
+INFO:tensorflow:global_step/sec: 2.0959
+INFO:tensorflow:examples/sec: 1073.1
+INFO:tensorflow:global_step/sec: 2.10961
+INFO:tensorflow:examples/sec: 1080.12
+INFO:tensorflow:Saving checkpoints for 4000 into ./tmp/output/model.ckpt.
+INFO:tensorflow:learning_rate = 1.7490247e-05, loss = 0.57177675, steps = 4000 (473.824 sec)
+INFO:tensorflow:global_step/sec: 2.07291
+INFO:tensorflow:examples/sec: 1061.33
+INFO:tensorflow:global_step/sec: 2.10933
+INFO:tensorflow:examples/sec: 1079.98
+INFO:tensorflow:global_step/sec: 2.11074
+INFO:tensorflow:examples/sec: 1080.7
+INFO:tensorflow:global_step/sec: 2.09302
+INFO:tensorflow:examples/sec: 1071.62
+INFO:tensorflow:global_step/sec: 2.10418
+INFO:tensorflow:examples/sec: 1077.34
+INFO:tensorflow:global_step/sec: 2.08594
+INFO:tensorflow:examples/sec: 1068
+INFO:tensorflow:global_step/sec: 2.05428
+INFO:tensorflow:examples/sec: 1051.79
+INFO:tensorflow:global_step/sec: 2.04446
+INFO:tensorflow:examples/sec: 1046.76
+INFO:tensorflow:global_step/sec: 2.04748
+INFO:tensorflow:examples/sec: 1048.31
+INFO:tensorflow:global_step/sec: 2.07364
+INFO:tensorflow:examples/sec: 1061.7
+INFO:tensorflow:Saving checkpoints for 5000 into ./tmp/output/model.ckpt.
+INFO:tensorflow:learning_rate = 9.362808e-06, loss = 1.3860078, steps = 5000 (481.385 sec)
+INFO:tensorflow:global_step/sec: 2.05336
+INFO:tensorflow:examples/sec: 1051.32
+INFO:tensorflow:global_step/sec: 2.07365
+INFO:tensorflow:examples/sec: 1061.71
+INFO:tensorflow:global_step/sec: 2.06248
+INFO:tensorflow:examples/sec: 1055.99
+INFO:tensorflow:global_step/sec: 2.05979
+INFO:tensorflow:examples/sec: 1054.61
+INFO:tensorflow:global_step/sec: 2.05924
+INFO:tensorflow:examples/sec: 1054.33
+INFO:tensorflow:global_step/sec: 2.06596
+INFO:tensorflow:examples/sec: 1057.77
+INFO:tensorflow:global_step/sec: 2.07228
+INFO:tensorflow:examples/sec: 1061.01
+INFO:tensorflow:global_step/sec: 2.07182
+INFO:tensorflow:examples/sec: 1060.77
+INFO:tensorflow:global_step/sec: 2.07606
+INFO:tensorflow:examples/sec: 1062.94
+INFO:tensorflow:global_step/sec: 2.06583
+INFO:tensorflow:examples/sec: 1057.7
+INFO:tensorflow:Saving checkpoints for 6000 into ./tmp/output/model.ckpt.
+INFO:tensorflow:learning_rate = 1.2353718e-06, loss = 0.18855211, steps = 6000 (484.064 sec)
+INFO:tensorflow:global_step/sec: 2.05158
+INFO:tensorflow:examples/sec: 1050.41
+INFO:tensorflow:global_step/sec: 2.07581
+INFO:tensorflow:examples/sec: 1062.82
+INFO:tensorflow:Saving checkpoints for 6152 into ./tmp/output/model.ckpt.
+INFO:tensorflow:Loss for final step: 2.1537712.
+INFO:tensorflow:training_loop marked as finished
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 抱 怨 手 续 费 贵 [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 2849 2596 2797 5330 6589 6586 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: alignment, label_id: 0
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 已 还 款 [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 2347 6820 3621 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 确 定 是 本 人 [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 4802 2137 3221 3315 782 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 你 哪 位 ? [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 872 1525 855 136 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 怀 疑 我 们 是 机 器 人 [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 2577 4542 2769 812 3221 3322 1690 782 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 自 己 办 理 [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 5632 2346 1215 4415 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 打 招 呼 [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 2802 2875 1461 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 考 虑 一 下 [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 5440 5991 671 678 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 修 改 期 数 [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 934 3121 3309 3144 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 否 定 是 本 人 [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 1415 2137 3221 3315 782 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 修 改 金 额 [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 934 3121 7032 7583 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 没 听 懂 [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 3766 1420 2743 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 已 经 办 理 过 了 [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 2347 5307 1215 4415 6814 749 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 确 认 账 单 可 以 分 期 [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 4802 6371 6572 1296 1377 809 1146 3309 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 咨 询 手 续 费 [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 1486 6418 2797 5330 6589 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 继 续 说 [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 5326 5330 6432 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 确 定 办 理 意 愿 [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 4802 2137 1215 4415 2692 2703 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 现 在 忙 [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 4385 1762 2564 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 否 定 办 理 意 愿 [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 1415 2137 1215 4415 2692 2703 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:*** Example ***
+INFO:tensorflow:tokens: [CLS] 好 多 [SEP] 找 我 干 嘛 ? [SEP]
+INFO:tensorflow:input_ids: 101 1962 1914 102 2823 2769 2397 1658 136 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:segment_ids: 0 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:input_mask: 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+INFO:tensorflow:label: no_alignment, label_id: 1
+INFO:tensorflow:weight: 1
+INFO:tensorflow:***** Running eval *****
+INFO:tensorflow:  Num orig examples = 63000
+INFO:tensorflow:  Num split examples = 63000
+INFO:tensorflow:  Batch size = 64
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Running eval on CPU
+INFO:tensorflow:*** Features ***
+INFO:tensorflow:  name = input_ids, shape = (?, 40)
+INFO:tensorflow:  name = input_mask, shape = (?, 40)
+INFO:tensorflow:  name = label, shape = (?,)
+INFO:tensorflow:  name = segment_ids, shape = (?, 40)
+INFO:tensorflow:  name = weight, shape = (?,)
+INFO:tensorflow:**** Trainable Variables ****
+INFO:tensorflow:  name = SIM_1/embeddings/word_embeddings:0, shape = (21128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/embeddings/token_type_embeddings:0, shape = (2, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/embeddings/position_embeddings:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/embeddings/LayerNorm/beta:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/embeddings/LayerNorm/gamma:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/self/query/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/self/query/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/self/key/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/self/key/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/self/value/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/self/value/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/output/dense/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/output/dense/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/output/LayerNorm/beta:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/output/LayerNorm/gamma:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/intermediate/dense/kernel:0, shape = (128, 256), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/intermediate/dense/bias:0, shape = (256,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/output/dense/kernel:0, shape = (256, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/output/dense/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/output/LayerNorm/beta:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/output/LayerNorm/gamma:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/self/query/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/self/query/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/self/key/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/self/key/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/self/value/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/self/value/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/output/dense/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/output/dense/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/output/LayerNorm/beta:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/output/LayerNorm/gamma:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/intermediate/dense/kernel:0, shape = (128, 256), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/intermediate/dense/bias:0, shape = (256,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/output/dense/kernel:0, shape = (256, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/output/dense/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/output/LayerNorm/beta:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/output/LayerNorm/gamma:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/pooler/dense/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/pooler/dense/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/output/kernel:0, shape = (128, 2)
+INFO:tensorflow:  name = SIM_1/output/bias:0, shape = (2,)
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2019-11-07-03:55:39
+INFO:tensorflow:Graph was finalized.
+INFO:tensorflow:Restoring parameters from ./tmp/output/model.ckpt-6152
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2019-11-07-03:56:04
+INFO:tensorflow:Saving dict for global step 6152: eval_accuracy = 0.99871427, global_step = 6152, loss = 0.054616306
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 6152: ./tmp/output/model.ckpt-6152
+INFO:tensorflow:evaluation_loop marked as finished
+INFO:tensorflow:***** Eval results *****
+INFO:tensorflow:  eval_accuracy = 0.99871427
+INFO:tensorflow:  global_step = 6152
+INFO:tensorflow:  loss = 0.054616306
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Running infer on CPU
+INFO:tensorflow:*** Features ***
+INFO:tensorflow:  name = input_ids, shape = (?, 40)
+INFO:tensorflow:  name = input_mask, shape = (?, 40)
+INFO:tensorflow:  name = label, shape = (?,)
+INFO:tensorflow:  name = segment_ids, shape = (?, 40)
+INFO:tensorflow:  name = weight, shape = (?,)
+INFO:tensorflow:**** Trainable Variables ****
+INFO:tensorflow:  name = SIM_1/embeddings/word_embeddings:0, shape = (21128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/embeddings/token_type_embeddings:0, shape = (2, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/embeddings/position_embeddings:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/embeddings/LayerNorm/beta:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/embeddings/LayerNorm/gamma:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/self/query/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/self/query/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/self/key/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/self/key/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/self/value/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/self/value/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/output/dense/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/output/dense/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/output/LayerNorm/beta:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/attention/output/LayerNorm/gamma:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/intermediate/dense/kernel:0, shape = (128, 256), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/intermediate/dense/bias:0, shape = (256,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/output/dense/kernel:0, shape = (256, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/output/dense/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/output/LayerNorm/beta:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_0/output/LayerNorm/gamma:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/self/query/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/self/query/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/self/key/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/self/key/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/self/value/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/self/value/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/output/dense/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/output/dense/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/output/LayerNorm/beta:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/attention/output/LayerNorm/gamma:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/intermediate/dense/kernel:0, shape = (128, 256), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/intermediate/dense/bias:0, shape = (256,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/output/dense/kernel:0, shape = (256, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/output/dense/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/output/LayerNorm/beta:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/encoder/layer_1/output/LayerNorm/gamma:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/pooler/dense/kernel:0, shape = (128, 128), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/pooler/dense/bias:0, shape = (128,), *INIT_FROM_CKPT*
+INFO:tensorflow:  name = SIM_1/output/kernel:0, shape = (128, 2)
+INFO:tensorflow:  name = SIM_1/output/bias:0, shape = (2,)
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Signatures INCLUDED in export for Classify: None
+INFO:tensorflow:Signatures INCLUDED in export for Regress: None
+INFO:tensorflow:Signatures INCLUDED in export for Predict: ['serving_default']
+INFO:tensorflow:Signatures INCLUDED in export for Train: None
+INFO:tensorflow:Signatures INCLUDED in export for Eval: None
+INFO:tensorflow:Restoring parameters from ./tmp/output/model.ckpt-6152
+WARNING:tensorflow:From /usr/local/lib/python3.6/site-packages/tensorflow/python/estimator/estimator.py:1044: calling SavedModelBuilder.add_meta_graph_and_variables (from tensorflow.python.saved_model.builder_impl) with legacy_init_op is deprecated and will be removed in a future version.
+Instructions for updating:
+Pass your op to the equivalent parameter main_op instead.
+INFO:tensorflow:Assets added to graph.
+INFO:tensorflow:No assets to write.
+INFO:tensorflow:SavedModel written to: ./tmp/output/temp-b'1573098964'/saved_model.pb
+63000 6152
